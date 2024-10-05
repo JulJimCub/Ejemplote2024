@@ -33,32 +33,25 @@ void printMatriz(int matriz[][SIZE]) {
         for (int j = 0; j < SIZE; j++) {
             printf("%d ", matriz[i][j]);
         }
-        printf("\n");  // Imprime una nueva línea al final de cada fila
-    }
+        printf("\n");  
     printf("\n");
 }
 
-// Función para llenar la matriz de forma aleatoria
-void MatrizRandom(int matriz[][SIZE]) {
+
+void MatrizRandom(int matriz[][SIZE]) { // Función matrizrandom
     // Inicializa la semilla para el generador de números aleatorios
     srand(time(NULL));
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
-            matriz[i][j] = rand() % 2;  // Genera un número aleatorio 0 o 1
+            matriz[i][j] = rand() % 2;  
         }
     }
 }
 
 int main() {
-    // Definimos una matriz binaria
     int matriz[SIZE][SIZE];
-
-    // Llenamos la matriz de manera aleatoria
     MatrizRandom(matriz);
-
-    // Imprimimos la matriz
     printMatriz(matriz);
-
     int largestLine = findLargestLine(matriz);
     printf("El tamaño de la secuencia de 1s más grande es: %d\n", largestLine);
 
